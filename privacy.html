@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kei · 服務條款與隱私權政策 (Terms & Privacy)</title>
+    <meta name="description" content="Kei Discord 機器人官方服務條款 (Terms of Service) 與隱私權政策 (Privacy Policy)。">
+    <style>
+        :root {
+            --bg-main: #0b0e14;
+            --bg-card: rgba(18, 22, 32, 0.95);
+            --bg-sub: #141923;
+            --border: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(0, 210, 255, 0.4);
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --text-sub: #c9d1d9;
+            --accent-cyan: #00D2FF;
+            --accent-blue: #5865F2;
+            --accent-red: #ED4245;
+            --accent-green: #57F287;
+            --accent-yellow: #FEE75C;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            --max-w: 1000px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-stack);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 60px;
+        }
+
+        header.site-header {
+            border-bottom: 1px solid var(--border);
+            background: rgba(11, 14, 20, 0.92);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+        .brand-icon { color: var(--accent-cyan); font-size: 1.4rem; font-weight: 700; }
+        .brand-title { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.5px; }
+        .brand-tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            font-family: monospace;
+        }
+        .header-links { display: flex; align-items: center; gap: 12px; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        .btn-outline { background: transparent; color: var(--text-sub); border-color: var(--border); }
+        .btn-outline:hover { color: var(--accent-cyan); border-color: var(--border-hover); background: rgba(0, 210, 255, 0.05); }
+        .btn-primary { background: var(--accent-blue); color: #fff; }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+        .container { max-width: var(--max-w); margin: 0 auto; padding: 32px 24px; }
+        .hero-notice {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-notice::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-blue));
+        }
+        .hero-notice h1 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hero-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 12px;
+            border-top: 1px solid var(--border);
+            padding-top: 12px;
+        }
+        .hero-meta-item strong { color: var(--text-sub); }
+
+        .tab-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            overflow-x: auto;
+        }
+        .tab-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        .tab-btn:hover { color: var(--text-main); border-color: var(--border-hover); }
+        .tab-btn.active {
+            background: rgba(0, 210, 255, 0.12);
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+        }
+
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px 32px;
+        }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        .legal-header { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+        .legal-header h2 { font-size: 1.4rem; color: var(--text-main); margin-bottom: 8px; }
+        .legal-header p { color: var(--text-sub); font-size: 0.92rem; }
+
+        .legal-section { margin-bottom: 32px; }
+        .legal-section h3 {
+            font-size: 1.15rem;
+            color: var(--accent-cyan);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 3px solid var(--accent-cyan);
+            padding-left: 10px;
+        }
+        .legal-section p { color: var(--text-sub); font-size: 0.92rem; margin-bottom: 12px; text-align: justify; }
+        .legal-section ul { list-style: none; padding-left: 0; margin-bottom: 14px; }
+        .legal-section li {
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-sub);
+            font-size: 0.92rem;
+            margin-bottom: 8px;
+        }
+        .legal-section li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        .callout {
+            background: rgba(237, 66, 69, 0.08);
+            border: 1px solid rgba(237, 66, 69, 0.3);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 18px 0;
+            font-size: 0.9rem;
+            color: #ffb8b9;
+        }
+        .callout-title { font-weight: 700; color: var(--accent-red); margin-bottom: 6px; }
+        .callout-info { background: rgba(0, 210, 255, 0.08); border-color: rgba(0, 210, 255, 0.3); color: #b3f2ff; }
+        .callout-info .callout-title { color: var(--accent-cyan); }
+        .callout-warning { background: rgba(254, 231, 92, 0.08); border-color: rgba(254, 231, 92, 0.3); color: #fff4ba; }
+        .callout-warning .callout-title { color: var(--accent-yellow); }
+
+        footer.site-footer {
+            max-width: var(--max-w);
+            margin: 40px auto 0 auto;
+            padding: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        footer.site-footer a { color: var(--accent-cyan); text-decoration: none; }
+        footer.site-footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 680px) {
+            .header-inner { flex-direction: column; align-items: flex-start; }
+            .content-card { padding: 24px 18px; }
+            .hero-meta { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">✦</span>
+                <span class="brand-title">Kei · 法律條款與規約</span>
+                <span class="brand-tag">MILLENNIUM PROTOCOL</span>
+            </a>
+            <div class="header-links">
+                <a href="index.html" class="btn btn-outline">返回首頁</a>
+                <a href="https://discord.gg/6nvyh5ppQz" target="_blank" rel="noopener noreferrer" class="btn btn-outline">支援伺服器</a>
+                <a href="https://discord.com/api/oauth2/authorize?client_id=1327150537446887504&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener noreferrer" class="btn btn-primary">邀請 Kei</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero-notice">
+            <h1><span>✦</span> Kei 官方規約協議庫</h1>
+            <p style="color: var(--text-sub); font-size: 0.95rem;">
+                此處收錄「Kei」Discord 應用程式之法定服務條款與隱私權保護規範。當您將本機器人加入伺服器、進行對話、完成身分驗證或調用任何功能，即受本規約全權約束。
+            </p>
+            <div class="hero-meta">
+                <div class="hero-meta-item"><strong>系統版本：</strong> Kei v2.4 (Millennium Architecture)</div>
+                <div class="hero-meta-item"><strong>生效日期：</strong> 2026 年 10 月 5 日</div>
+                <div class="hero-meta-item"><strong>開發維運者：</strong> ixo</div>
+                <div class="hero-meta-item"><strong>官方信箱：</strong> afking.ixo@gmail.com</div>
+            </div>
+        </div>
+
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="switchTab('tos')">
+                <span>✦</span> 服務條款 (Terms of Service)
+            </button>
+            <button class="tab-btn" onclick="switchTab('privacy')">
+                <span>✦</span> 隱私權政策 (Privacy Policy)
+            </button>
+        </div>
+
+        <div class="content-card">
+            <!-- TAB 1: 服務條款 -->
+            <div id="tab-tos" class="tab-panel active">
+                <div class="legal-header">
+                    <h2>Kei 服務條款 (Terms of Service)</h2>
+                    <p>請詳細閱讀以下條款。使用本機器人即代表您已閱讀、理解並無條件同意本條款之全部內容。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>前言與條款接受 (Acceptance of Terms)</h3>
+                    <p>本《服務條款》（以下簡稱「本條款」）為使用者（以下簡稱「您」）與 Kei 開發者 ixo 暨技術團隊（以下簡稱「本團隊」或「服務提供者」）之間具備法律約束力之服務契約。適用於您對「Kei」Discord 機器人（以下簡稱「本機器人」）及其相關 Web 儀表板、API、身分驗證機制之所有使用行為。</p>
+                    <p>當您將本機器人加入伺服器、於文字頻道或私訊中與其互動、透過本機器人授權網頁完成驗證，或於伺服器中保留本機器人，即視為您已完整理解並同意接受本條款。若您不同意本條款之任何部分，請立即將本機器人自伺服器中移出並停止所有使用。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第一條：法定年齡與行為能力 (Age Requirements)</h3>
+                    <p>您明確保證：您已年滿 13 歲（或您所在司法管轄區法定允許使用 Discord 平台之最低法定年齡），具備完全之民事法律行為能力簽署本契約。若您介於 13 歲至法定成年年齡之間，您必須在法定代理人或監護人之監督、陪同與明確同意下閱讀並同意本條款。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第二條：服務範疇與功能架構 (Scope of Services)</h3>
+                    <p>本機器人提供包含但不限於以下核心功能模組（本團隊保留隨時升級、調整或終止特定模組之權利）：</p>
+                    <ul>
+                        <li><strong>Anti-Raid 伺服器防爆與安全防護矩陣：</strong> 頻道與身分組異常增刪攔截、洗版與垃圾訊息偵測、釣魚與假 Nitro 網址自動防禦、全伺服器緊急鎖定 (>kei lockdown)。</li>
+                        <li><strong>FastRestore 伺服器架構備份與還原系統：</strong> 身分組權限、頻道結構、覆寫 (Overwrites) 導出為 JSON 結構檔與還原。</li>
+                        <li><strong>OAuth2 智慧身分驗證：</strong> 透過 Discord 官方授權流程核發伺服器驗證身分組。</li>
+                        <li><strong>多核心 AI 語言模型對話與人格模擬：</strong> 整合 Google GenAI (Gemini) 與 Groq 等第三方模型之情境運算。</li>
+                        <li><strong>G-Ban 全域威脅聯防系統：</strong> 跨伺服器之惡意攻擊者、炸群腳本自動黑名單驅逐與攔截。</li>
+                        <li><strong>社群運算與多媒體工具：</strong> ASCII 影像藝術轉換、Starboard 精華語錄、閒置成員巡檢 (poke_lurkers)。</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第三條：第三方服務與平台相依性 (Third-Party Dependency)</h3>
+                    <p>本機器人架構於 Discord 平台及外部雲端運算環境。使用者在使用本服務時，必須嚴格遵守《Discord 服務條款》、《Discord 社群守則》及《Discord 開發者政策》。</p>
+                    <p>本機器人之 AI 生成與運算功能依賴 Google LLC (Gemini API)、Groq Inc. 及雲端主機供應商。您理解並同意，第三方供應商之服務中斷、網路波動、政策修改或 API 額度限制所引致之功能異常，本團隊概不承擔任何違約或賠償責任。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第四條：使用者規範與禁止行為 (Prohibited Conduct)</h3>
+                    <p>使用者嚴禁從事以下任何行為：</p>
+                    <ul>
+                        <li>利用本機器人生成、傳播涉及兒童性剝削 (CSAM)、恐怖主義、暴力威脅、仇恨歧視、詐欺、自殘、侵害他人隱私或違反公序良俗之內容。</li>
+                        <li>對本機器人、伺服器後端或關聯 API 發動阻斷服務攻擊 (DoS/DDoS)、惡意大量發送指令以耗盡配額、繞過速率限制 (Rate Limit) 或探測系統漏洞。</li>
+                        <li>利用本機器人偽造官方通知、傳播假禮品卡、釣魚憑證或惡意軟體。</li>
+                        <li>濫用本機器人之管理指令（如踢出成員、全伺服器鎖定、還原備份）進行未經伺服器擁有者許可之惡意破壞行為。</li>
+                    </ul>
+                    <div class="callout">
+                        <div class="callout-title">✦ 違規處置宣告</div>
+                        若經本團隊判定使用者涉及重大違規，本團隊有權不經事先通知，逕行封鎖其使用權限（如執行 /ban_ai）、將該帳號加入全域封鎖名單 (G-Ban)，並保留向執法機關舉報之權利。
+                    </div>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第五條：伺服器管理者與擁有者之特別義務 (Admin Responsibility)</h3>
+                    <p>將本機器人加入伺服器之人員，保證已獲得該伺服器合法所有權或完整管理授權。本機器人具備執行高權限操作之能力（如踢除/封鎖成員、頻道鎖定、架構還原等）。</p>
+                    <p><strong>伺服器管理者應自主審慎評估並承擔授權風險。因管理員誤操作、指令誤用、帳號遭盜用或身分組配置錯誤所致之伺服器結構覆蓋、頻道遺失或成員異動，本團隊概不承擔任何法律與損害賠償責任。</strong></p>
+                    <p>透過 /backup_server 導出之備份檔案 (JSON) 載有伺服器架構細節，管理員應妥善保管，若因使用者端檔案外洩造成伺服器損害，應由使用者自負其責。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第六條：全域防衛系統 (G-Ban) 之特別約定 (Global Ban Protocol)</h3>
+                    <p>為保護全體受防護伺服器免遭集體攻擊與詐騙，本機器人維護一組全域威脅名單 (G-Ban)。凡被列入名單之帳號，於進入任何受本機器人防護之伺服器時，將會被系統自動執行驅逐 (Kick) 或永久封鎖 (Ban)。</p>
+                    <p>使用者知悉並同意此自動防禦處置屬於系統維護網路秩序之合理必要措施。若有誤判疑慮，可透過官方支援管道提出申訴審查，在審查裁決前本團隊不對攔截行為承擔損害賠償責任。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第七條：人工智慧 (AI) 內容免責聲明 (AI Disclaimers)</h3>
+                    <p>本機器人之 AI 對話與人格回應均為大型語言模型基於機率計算自動產生，絕不代表本團隊之立場、政治觀點或價值取向。</p>
+                    <p>AI 輸出內容僅供娛樂與參考用途，不構成任何形式之專業法律、醫療、財務或投資建議。依賴該輸出所生之任何風險均由使用者自行承擔。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第八條：智慧財產權 (Intellectual Property)</h3>
+                    <p>本機器人之原始碼、演算法、視覺排版、官方文檔、品牌識別（包括「Kei」標誌）之著作權及智慧財產權，均歸屬於開發者 ixo 及本團隊所有。未經事前書面授權，嚴禁進行反編譯、逆向工程、惡意扒竊或商業轉售。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第九條：責任限制與免責條款 (Limitation of Liability)</h3>
+                    <p>本服務係依「現狀」(AS IS) 與「現有基礎」(AS AVAILABLE) 提供。在適用法律允許的最大範圍內，本團隊不承擔任何明示或默示之保證責任。</p>
+                    <p>在任何情況下，本團隊均不對因使用或無法使用本服務所引致之任何直接、間接、特別、衍生性損害負責（包括但不限於伺服器資料遺失、商業中斷、獲利損失或硬體損壞）。</p>
+                    <div class="callout callout-warning">
+                        <div class="callout-title">✦ 賠償責任上限約定</div>
+                        在任何爭議情況下，本團隊對使用者之累積賠償總額上限，以使用者在損害發生前三十天內因使用本服務而向本團隊實際支付之金額為限。若使用者係免費使用本服務，本團隊之賠償責任上限明確約定為<strong>新台幣零元 (NT$ 0)</strong>。
+                    </div>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第十條：服務變更、暫停與不可抗力 (Modifications & Force Majeure)</h3>
+                    <p>本團隊保留於任何時間，無須事前通知而修改、暫停或永久終止本服務全部或部分功能之權利。</p>
+                    <p>因不可抗力事故（包括但不限於天災、戰爭、電信骨幹中斷、雲端節點故障、駭客攻擊、Discord 官方 API 大規模中斷）導致之履約不能或服務中斷，本團隊不承擔任何違約責任。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第十一條：最終解釋權聲明 (Right of Final Interpretation)</h3>
+                    <div class="callout callout-info">
+                        <div class="callout-title">✦ 最終解釋權聲明</div>
+                        本團隊在適用法律允許之最大範圍內，對本服務條款之所有文字、名詞定義、規則解釋、違規行為之判定標準、處置措施（包括但不限於 G-Ban 名單裁決與權限收回）以及所有與本服務相關之運作規範，享有最終、排他且完全之解釋權與裁量權。
+                    </div>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第十二條：準據法、管轄法院與可分性 (Jurisdiction & Severability)</h3>
+                    <p>本條款之解釋與適用均以中華民國（台灣）法律為準據法。因本條款或本服務所生之任何爭議，雙方合意以<strong>臺灣臺北地方法院</strong>為第一審專屬管轄法院。</p>
+                    <p>若本條款之任何條款經具管轄權之法院裁定為無效或不可執行，該部分應予以最小程度修正或分割，其餘條款之效力不受任何影響。</p>
+                </div>
+            </div>
+
+            <!-- TAB 2: 隱私權政策 -->
+            <div id="tab-privacy" class="tab-panel">
+                <div class="legal-header">
+                    <h2>Kei 隱私權政策 (Privacy Policy)</h2>
+                    <p>本政策旨在詳細說明 Kei 如何收集、處理、儲存與保護您的個人資料與伺服器資訊。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>引言與法規遵循 (Introduction & Legal Compliance)</h3>
+                    <p>我們高度重視使用者的隱私權，並遵循中華民國《個人資料保護法》(PDPA) 以及國際主要資料保護準則（包括歐盟 GDPR 與 Discord 開發者資料政策）之核心精神。當您使用本機器人時，即代表您同意本政策所列之處理流程。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第一條：我們所收集與處理的資料範疇 (Data We Collect)</h3>
+                    <p>為了維持核心功能運作與安全維護，本機器人可能處理以下資料：</p>
+                    <ul>
+                        <li><strong>Discord 識別基礎資訊：</strong> 使用者 ID (Snowflake)、使用者名稱、顯示名稱、頭像 Hash、伺服器 ID、頻道 ID、身分組 ID 及權限數值。</li>
+                        <li><strong>OAuth2 授權憑證資料：</strong> 當您點擊驗證按鈕完成授權時，系統處理授權碼交換之 Access Token、Refresh Token 及授權時間，並寫入受權限保護之 Google Sheets 資料庫以維持身分組驗證快取。</li>
+                        <li><strong>AI 對話上下文與提示詞：</strong> 與本機器人互動（提及、前綴指令或私訊）時，系統會暫時讀取近 30 則（最多 2000 字元）對話上下文以維持 AI 對話連貫。</li>
+                        <li><strong>安全稽核與防護日誌：</strong> 為維護系統合規性，AI 對話審核日誌記錄於本地 CSV (kei_chat_logs.csv) 與專屬審核頻道中；Anti-Raid 攔截事件記錄違規使用者 ID、訊息特徵及處置動作。</li>
+                        <li><strong>伺服器架構備份檔案：</strong> 執行 /backup_server 時生成之身分組、頻道、權限覆寫等結構性 JSON 資料（不包含使用者歷史訊息），由管理員自行下載保存。</li>
+                        <li><strong>多媒體處理資料：</strong> 使用 /ascii 時上傳之圖片，僅於記憶體中進行運算轉換，處理完畢即自記憶體釋放。</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第二條：資料使用目的與合法性 (Purposes of Processing)</h3>
+                    <p>我們收集之資料僅用於以下合法用途：</p>
+                    <ul>
+                        <li>履行 AI 語言模型推理、角色設定切換與社群功能運作。</li>
+                        <li>執行伺服器安全防衛、洗版攔截、假 Nitro 釣魚識別與 G-Ban 全域黑名單防禦。</li>
+                        <li>稽核防範違法指令調用與濫用行為，確保符合 Discord 安全規範。</li>
+                        <li>系統除錯、連線品質分析與快取效能最佳化。</li>
+                    </ul>
+                    <div class="callout callout-info">
+                        <div class="callout-title">✦ 絕對不轉售個資聲明</div>
+                        我們鄭重承諾：絕不向任何廣告商、行銷機構或無關之第三方販售、出租、交換或非法公開使用者的任何個人資料與對話內容。
+                    </div>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第三條：第三方服務與外部傳輸 (Third-Party Providers)</h3>
+                    <p>部分資料會透過安全加密協定傳輸至經授權之第三方技術基礎設施：</p>
+                    <ul>
+                        <li><strong>Discord, Inc.：</strong> 處理底層通訊與 OAuth2 授權驗證。</li>
+                        <li><strong>Google LLC：</strong> 透過 Google GenAI 處理提示詞運算；透過 Google Sheets API 儲存身分驗證授權清單。</li>
+                        <li><strong>Groq Inc.：</strong> 提供超高速 LPU 模型推理支援。</li>
+                        <li><strong>雲端託管供應商 (如 Render)：</strong> 部署本機器人服務節點與 Web Callback 端點。</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第四條：資料儲存安全與保存期限 (Data Security & Retention)</h3>
+                    <p>多數即時功能（如圖像轉換與臨時對話記憶）採記憶體處理 (In-Memory)，於任務完成或程序重啟後即行清除。</p>
+                    <p>安全審核日誌採滾動留存機制，僅限技術人員基於安全調查與防濫用目的調閱。API 存取金鑰與憑證透過嚴格環境變數與金鑰隔離保護，杜絕公網未授權讀取。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第五條：使用者的資料權利 (Data Subject Rights)</h3>
+                    <p>依據個人資料保護相關法規，您享有以下權利：</p>
+                    <ul>
+                        <li><strong>查詢與閱覽：</strong> 詢問系統是否持有您的個人資料記錄。</li>
+                        <li><strong>請求更正或補充：</strong> 要求修正有誤之資料。</li>
+                        <li><strong>請求刪除（被遺忘權）：</strong> 隨時聯繫我們自系統中清除與您帳號相關聯之授權記錄或日誌。</li>
+                        <li><strong>撤銷 OAuth2 授權：</strong> 您可隨時至 Discord「使用者設定」 ▸「授權的應用程式」中手動撤回對 Kei 的授權。</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第六條：未成年人保護 (Children's Privacy)</h3>
+                    <p>本機器人不主動或故意收集未滿 13 歲兒童之個人資料。若發現系統在未經監護人同意之情形下意外儲存了未成年人之資料，我們將立即採取行動將其自系統與資料庫中予以清除。</p>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第七條：最終解釋權聲明 (Right of Final Interpretation)</h3>
+                    <div class="callout callout-info">
+                        <div class="callout-title">✦ 隱私權條款最終解釋權</div>
+                        本團隊在適用法律允許的最大範圍內，對本隱私權政策之各項條文涵義、資料收集必要性認定及例外情形處理，保留最終且完全之解釋權。
+                    </div>
+                </div>
+
+                <div class="legal-section">
+                    <h3>第八條：政策修訂與聯絡方式 (Revisions & Contact)</h3>
+                    <p>本隱私權政策可能隨功能升級而調整，重大變更將於官方支援群組公告。若您有任何疑問或欲行使個人資料權利，請透過以下管道與我們聯繫：</p>
+                    <ul>
+                        <li><strong>官方聯絡信箱：</strong> afking.ixo@gmail.com</li>
+                        <li><strong>官方 Discord 支援群組：</strong> https://discord.gg/6nvyh5ppQz</li>
+                        <li><strong>開發團隊代表：</strong> ixo (Kei Project Lead)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div>© 2026 Kei Millennium Protocol. All rights reserved. · Developed by <strong>ixo</strong></div>
+        <div style="margin-top: 8px;">
+            <a href="index.html">官方首頁</a> · 
+            <a href="https://discord.gg/6nvyh5ppQz" target="_blank" rel="noopener noreferrer">支援伺服器</a> · 
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1327150537446887504&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener noreferrer">邀請本機器人</a>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+            
+            if (tabId === 'tos') {
+                document.querySelectorAll('.tab-btn')[0].classList.add('active');
+                document.getElementById('tab-tos').classList.add('active');
+            } else if (tabId === 'privacy') {
+                document.querySelectorAll('.tab-btn')[1].classList.add('active');
+                document.getElementById('tab-privacy').classList.add('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.toLowerCase();
+            if (hash === '#privacy') {
+                switchTab('privacy');
+            } else if (hash === '#tos') {
+                switchTab('tos');
+            }
+        });
+    </script>
+</body>
+</html>
